@@ -1,0 +1,66 @@
+  <%= javascript_include_tag 'chart', 'data-turbolinks-track' => true %>
+<div>
+	PolarArea Chart: <br>
+	<canvas id="mypolarChart" width="400" height="400"></canvas>
+</div>
+
+
+<div>
+	 Doughnut Chart: <br>
+	<canvas id="mydoughnutChart" width="400" height="400"></canvas>
+</div>
+
+
+<div>
+	PolarArea Chart: <br>
+	<canvas id="myChart" width="400" height="400"></canvas>
+</div>
+
+
+<div>
+	 PolarArea Chart: <br>
+	<canvas id="myChart" width="400" height="400"></canvas>
+</div>
+
+
+
+<script language='javascript'>
+//Get context with jQuery - using jQuery's .get() method.
+var pc = $("#mypolarChart").get(0).getContext("2d");
+var dc= $("#mydoughnutChart").get(0).getContext("2d");
+var polardata = [
+	{
+		value : 30,
+		color: "#D97041"
+	},
+	{
+		value : 90,
+		color: "#C7604C"
+	},
+	{
+		value : 24,
+		color: "#21323D"
+	},
+	{
+		value : 58,
+		color: "#9D9B7F"
+	},
+	{
+		value : 82,
+		color: "#7D4F6D"
+	},
+	{
+		value : 8,
+		color: "#584A5E"
+	}
+]
+
+
+//This will get the first returned node in the jQuery collection.
+
+new Chart(pc).PolarArea(polardata); 
+
+new Chart(dc).Doughnut(polardata);
+
+
+</script>
